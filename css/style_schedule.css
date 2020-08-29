@@ -25,6 +25,18 @@ body {
     line-height: 1.6;
 }
 
+.schedule input {
+    position: absolute;
+    cursor: pointer;
+    width: 20%;
+    border: 2px solid #000000;
+}
+
+.checkbox-custom {
+    border: 2px solid #000000;
+    height:100px;
+}
+
 #all:checked ~ .container .filterDiv {
     display: block;
 }
@@ -36,7 +48,7 @@ body {
     width: 100%;
     line-height: 100px;
     text-align: center;
-    margin: 2px;
+    margin-bottom: 1px;
     display: none;
 }
 
@@ -67,3 +79,28 @@ body {
     width: 20%;
 }
 
+/* The navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: relative; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 100;
+}
+
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change background on mouse-over */
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }

@@ -366,6 +366,30 @@ header {
 	}
 }
 
+/*  Latest Content Section  */
+.showcase {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+	grid-template-rows: repeat(auto-fit, 500px);
+	column-gap: 1.5em;
+	row-gap: 1em;
+}
+
+.showcase__item {
+	text-decoration: none;
+	color: var(--clr-light);
+	background: #505050;
+}
+
+.showcase__img{
+	object-fit: contain;
+	object-position: center;
+	margin: 3%;
+	width: 94%;
+	height: 80%
+	
+}
+
 /*  Footer  */
 .footer {
 	background: #111;
