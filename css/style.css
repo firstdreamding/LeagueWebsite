@@ -1,0 +1,380 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--ff-primary: 'Source Sans Pro', sans-serif;
+	--ff-secondary: 'Source Code Pro', monospace;
+
+	--fw-reg: 300;
+	--fw-bold: 900;
+
+	--clr-light: #fff;
+	--clr-dark: #303030;
+	--clr-gray: #505050;
+	--clr-accent: #16e0bd;
+
+	--fs-h1: 3rem;
+	--fs-h2: 2.25rem;
+	--fs-h3: 1.25rem;
+	--fs-body: 1rem;
+
+	--fs-column-about: 300px;
+	--fs-margin-about-img: .25em;
+
+	--bs: 0.25em 0.25em 0.75em rgba(0,0,0,.35),
+		0.125em 0.125em 0.25em rgba(0,0,0,.2); 
+}
+
+@media (min-width: 950px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+
+        --fs-column-about: 400px;
+        --fs-margin-about-img: 1.5em;
+    }
+}
+
+/* General styles */
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+	padding: 4em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+	font-weight: var(--fw-bold);
+}
+
+:focus {
+	outline: 3px solid var(--clr-accent);
+	outline-offset: 3px;
+}
+
+/* Buttons */
+
+.btn {
+	display: inline-block;
+	padding: .5em 2.5em;
+	background: var(--clr-accent);
+	color: var(--clr-dark);
+	text-decoration: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: var(--fw-bold);
+	transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+	transform: scale(1.1);
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { 
+	font-size: var(--fs-h1) 
+}
+
+h2 { 
+	font-size: var(--fs-h2) 
+}
+
+h3 { 
+	font-size: var(--fs-h3) 
+}
+
+.section__title {
+	margin-bottom: .25em;
+}
+
+.section__title--intro {
+	font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+	margin: 0;
+	font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+	background: var(--clr-accent);
+	padding: .25em 1em;
+	font-family: var(--ff-secondary);
+	margin-bottom: 1.2em;
+}
+
+/* header */
+/*
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+}
+
+.logo {
+	max-width: 25px;
+}
+
+.nav {
+	position: fixed;
+	background: var(--clr-dark);
+	color: var(--clr-light);
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+
+	transform: translateX(100%);
+	transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+	list-style: none;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10em;
+}
+
+.nav__link {
+	color: inherit;
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-h2);
+	text-decoration: none;
+}
+
+.nav-toggle {
+	padding: .5em;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 1em;
+	z-index: 1000;
+}
+
+.hamburger,
+.hamburger:before,
+.hamburger:after {
+	background: var(--clr-dark);
+	width: 2em;
+	height: 3px;
+	border-radius: 1em;
+	transition: transform 250ms ease-in-out;
+}
+
+.hamburger {
+	display: block;
+	position: relative;
+}
+
+.hamburger:before,
+.hamburger:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.hamburger:before { top: 6px; }
+
+.hamburger:after { bottom: 6px; }
+
+*/
+
+/* to do maybe later */
+
+/* Full Page */
+
+.full-page {
+	height: 100vh;
+}
+
+/*  Intro Stuff  */
+
+.intro {
+	position: relative;
+	padding: 4em 2em;
+}
+
+.intro__img {
+	box-shadow: var(--bs);
+}
+
+@media (min-width: 750px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: auto auto;
+        grid-column-gap: 2em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+
+       	top: 50%;
+		transform: translateY(-50%);
+    }
+    
+    .intro__img {
+    	grid-area: img;
+    	min-width: 250px;
+    	position:relative;
+    	z-index: 2;
+    }
+
+    .section__subtitle--intro {
+    	align-self: start;
+    	grid-column: -1 / 1;
+    	grid-row: 2;
+    	text-align: right;
+    	position: relative;
+    	left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+@media (max-width: 749px) {
+    .full-page {
+    	height: auto;
+    }
+}
+
+.blinking{
+    animation:blinkingText 2s infinite;
+    font-weight: var(--fw-reg);
+}
+@keyframes blinkingText{
+    0%{     color: var(--clr-gray);   	}
+    30%{    color: var(--clr-gray); 	}
+    50%{    color: transparent; 		}
+    80%{    color:transparent;  		}
+    100%{   color: var(--clr-gray);    	}
+}
+
+/* Passion Section */
+
+.league-info {
+	background-color: var(--clr-gray);
+	background-image: url(../res/my-work-background.jpg);
+	background-size: cover;
+	background-blend-mode: multiply;
+	color: var(--clr-light);
+	text-align: center;
+}
+
+.section__title--l-info {
+	color: var(--clr-accent);
+	position: relative;
+}
+
+.section__title--l-info::after {
+	content: '';
+	display: block;
+	width: 20%;
+	height: 1px;
+	margin: 0.5em auto 1em;
+	background: var(--clr-light);
+	opacity: 0.25;
+}
+
+.avaliable-leagues {
+	margin-bottom: 3em;
+}
+
+.league-entry {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+	.avaliable-leagues {
+		display: flex;
+		max-width: 1250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.league-entry + .league-entry {
+		margin-left: 4em;
+	}
+}
+
+/*  Footer  */
+.footer {
+	background: #111;
+	color: var(--clr-accent);
+	text-align: center;
+	padding: 3em 0 1.5em;
+	font-size: var(--fs-h3);
+}
+
+.footer a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.footer__link {
+	font-size: var(--fs-h3);
+	font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+	opacity: .7;
+}
+
+.footer__link:hover {
+	text-decoration: underline;
+}
+
+.social-list {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin: 2em 0 0;
+	padding: 0;
+}
+
+.social-list__item {
+	margin: 0 0.5em;
+}
+
+.social-list__padding {
+	padding: 0.5em;
+}
