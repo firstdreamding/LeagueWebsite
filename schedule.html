@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Insert Name Here</title>
+    <link rel="stylesheet"
+          href="https://necolas.github.io/normalize.css/latest/normalize.css">
+
+    <script src="https://kit.fontawesome.com/18b76987b6.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_schedule.css">
+
+</head>
+
+<body>
+    <!-- Introduction Section-->
+    <section class="schedule-section">
+
+        <input type="checkbox" id="gold" checked> Gold<br>
+        <input type="checkbox" id="plat" checked> Plat<br>
+
+        <div class="container">
+
+            <div class="filterDiv plat">
+                <div class="left-test">
+                    21/2020
+                </div>
+            G2 vs FNC
+            </div>
+
+            <div id="id01"></div>
+
+            <script>
+                function myFunction(arr) {
+                var out = "";
+                var i;
+                for(i = 0; i<arr.length; i++) {
+                out += '<div class="filterDiv ' + arr[i].tag + '">' +
+                arr[i].date + ' ' + arr[i].team1 + '</div><br>';
+                }
+                document.getElementById("id01").innerHTML = out;
+                }
+            </script>
+
+            <script src="schedule_list.js"></script>
+
+        </div>
+    </section>
+</body>
+</html>

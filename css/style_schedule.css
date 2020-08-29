@@ -1,0 +1,31 @@
+#all:checked ~ .container .filterDiv {
+    display: block;
+}
+
+
+.filterDiv, :not(#all):checked ~ .container .filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none;
+}
+
+#plat:checked ~ .container .plat,
+#gold:checked ~ .container .gold {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.left-test {
+    position: relative;
+    left: 80px;
+}
