@@ -1,13 +1,39 @@
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    --fw-reg: 300;
+    --fw-bold: 900;
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-gray: #505050;
+    --clr-accent: #16e0bd;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    --fs-column-about: 300px;
+    --fs-margin-about-img: .25em;
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.35), 0.125em 0.125em 0.25em rgba(0,0,0,.2);
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
 #all:checked ~ .container .filterDiv {
     display: block;
 }
 
-
 .filterDiv, :not(#all):checked ~ .container .filterDiv {
     float: left;
-    background-color: #2196F3;
+    background-color: var(--clr-dark);
     color: #ffffff;
-    width: 100px;
+    width: 100%;
     line-height: 100px;
     text-align: center;
     margin: 2px;
@@ -17,7 +43,6 @@
 #plat:checked ~ .container .plat,
 #gold:checked ~ .container .gold {
     display: block;
-    width: 100%;
 }
 
 .container {
@@ -25,7 +50,20 @@
     overflow: hidden;
 }
 
-.left-test {
-    position: relative;
-    left: 80px;
+.time {
+    text-align: left;
+    float: left;
+    width: 20%;
 }
+
+.content {
+    float: left;
+    width: 60%;
+}
+
+.series {
+    text-align: right;
+    float: left;
+    width: 20%;
+}
+
